@@ -1,0 +1,320 @@
+body{
+                font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+                /* 设置最小宽度，当缩小到当前宽度后就不会继续再缩小 */
+                min-width: 1226px;
+                /* margin: 0 auto; */
+}
+
+.clearfix::after,
+.clearfix::before{
+                content: '';
+                display: table;
+                clear: both;
+}
+
+/* 去除超链接样式 */
+body a{
+                text-decoration: none;
+}
+/* 设置顶部导航条外部容器 */
+.top-nav-banner{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                background-color: #333333;
+}
+
+/* 设置顶部导航条内部容器 */
+.top-nav{
+                width: 1226px;
+                margin: 0 auto;
+}
+
+/* 设置左侧内容浮动 */
+.top-left,
+.top-left li,
+.top-left span,
+.top-right li,
+.top-right span{
+                float: left;
+}
+
+/* 设置右侧内容浮动 */
+.top-right{
+                float: right;
+}
+
+/* 设置左侧顶部导航栏超链接样式 */
+.top-nav a{
+                color: #b0b0b0;
+                font-size: 12px;
+}
+
+/* 设置左侧顶部导航栏间隔符样式 */
+.top-nav span{
+                color: #424242;
+                font-size: 13px;
+} 
+
+/* 设置顶部导航栏左侧 */
+.top-nav .top-left li{
+                /* background-color: red; */
+                padding: 0 8px;
+}
+
+.app{
+                position: relative;
+}
+/* 设置app下的小三角 */
+/* .app a::after */
+.app::after{
+                content: '';
+                /* 绝对定位后脱离文档流 不需要block */
+                /* display: block; */
+                border: 8px solid transparent;
+                border-top: none;
+                border-bottom-color: #fff;
+                line-height: 1;
+                width: 0;
+                height: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                display: none;
+}
+/* 设置app下拉框 */
+.app .arcode {
+                background-color: #fff;
+                width: 124px;
+                height: 148px;
+                /* 如果不加会因为40的行高导致字体溢出，重置行高可以解决问题 */
+                line-height: 1;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+                text-align: center;
+                position: absolute;
+                left: -30px;
+                /* display: none;*/
+
+                /* 另一种隐藏方式，通过display不好加动画效果 */
+                height: 0;
+                overflow: hidden;
+
+                /* trasnsition 用于为样式设置过渡效果 */
+                transition: height 0.3s;
+                z-index: 999;
+}
+
+/* 设置移入效果 */
+.app:hover .arcode,
+/* .app:hover > a::after */
+.app:hover::after
+{
+                display: block;
+                height: 148px;
+}
+
+/* 修改图片大小 */
+.app .arcode img{
+                width: 90px;
+                /* 设置水平居中 */
+                margin: 17px;
+                margin-bottom: 14px;
+}
+
+/* 修改字体 */
+.app .arcode span{
+                /* background-color: red; */
+                color: #000;
+                font-size: 14px;
+                /* display: block; */
+                /* text-align: center; */
+                margin: 0 18px;
+}
+
+/* 设置顶部导航栏右侧 */
+.top-nav .top-right li:not(:last-child){
+                /* background-color: red; */
+                padding: 0 8px;
+}
+
+/* 设置购物车 */
+.top-nav .top-right .shopping-cart{
+                background-color: #424242;
+                margin-left: 26px;
+                width: 120px;
+                height: 40px;
+                position: relative;
+}
+
+/* 设置超链接宽度 */
+.top-nav .top-right .shopping-cart a{
+                /* background-color: red; */
+                display: block;
+                width: 100%;
+                text-align: center;
+                
+}
+
+/* 设置顶部导航栏超链接移入效果 */
+.top-nav a:hover{
+                color: #FFFFFF;
+}
+
+/* 设置购物车移入效果 */
+.top-nav .top-right .shopping-cart a:hover{
+                color: #FF6700;
+                background-color: #FFFFFF;
+}
+
+/* 设置购物车下拉框 */
+.shopping-cart .cart{
+                width: 330px;
+                height: 0px;
+                background-color: #fff;
+                position: absolute;
+                right: 0px;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+                /* display: none; */
+                
+}
+
+/* 设置购物车内字体 */
+.shopping-cart .cart span{
+                /* background-color: red; */
+                font-size: 12px;
+                margin: 30px 65px;
+}
+
+/* 设置购物车移入出现下拉框效果 */
+.shopping-cart:hover .cart{
+                display: block;
+                height: 100px;
+                transition: height 0.3s;
+                z-index: 999;
+}
+
+/* 设置主题容器的大小和位置 */
+.main-banner{
+                width: 100%;
+                /* height: 100px; */
+                /* background-color: red; */
+}
+
+/* 创建导航容器 */
+.main-banner .nav{
+                width: 1226px;
+                height: 100px;
+                /* background-color: #bfa; */
+                position: relative;
+                margin: 0 auto;
+}
+
+/* 取消超链接样式 */
+.main-banner .nav a{
+                text-decoration: none;
+                color: #333;
+}
+
+/* 创建图片容器 */
+.main-banner .nav .mi-picture{
+                background-color: #ff6700;
+                width: 55px;
+                height: 55px;
+                margin: 22.5px 0;
+                position: absolute;
+}
+
+/* 设置图片居中 */
+.main-banner .nav .mi-picture img{
+                /* background-color: red; */
+                padding: 3px;
+}
+
+.main-banner .nav .mi-picture{
+                float: left;
+}
+
+/* 设置浮动 */
+.main-banner .nav .nav-center,
+.main-banner .nav .search-wrapper{
+                float: right;
+}
+
+.main-banner .nav .nav-center li{
+                float: left;
+}
+
+/* 设置中间搜索容器 */
+.main-banner .nav .nav-center{
+                /* background-color: red; */
+                width: 850px;
+                height: 100px;
+                line-height: 100px;
+                /* text-align: center; */
+                /* display: inline-block; */
+                /* position: relative; */
+                /* padding-left: 58px; */
+}
+
+/* 设置中间标签的样式 */
+.main-banner .nav .nav-center li{
+                /* background-color: red; */
+                margin: 0 12px;
+                /* position: absolute; */
+                font-size: 16px;
+}
+
+/* 设置移入效果 */
+.main-banner .nav .nav-center a:hover{
+                color: #FF6700;
+}
+
+/* 隐藏第一个项目 */
+.main-banner .nav .nav-center .hidden{
+                visibility: hidden;
+}
+
+/* 设置右侧搜索框外围容器 */
+.main-banner .nav .search-wrapper{
+                /* background-color: red; */
+                height: 50px;
+                width: 296px;
+                text-align: center;
+                margin-top: 25px;
+                border:1px solid rgb(224, 224, 224);
+}
+
+/* 去除两个框之间的缝隙 */
+.search-wrapper .search-inp,
+.search-wrapper .search-btn
+{
+                float: left;
+}
+
+/* 设置搜索框样式 */
+.search-wrapper .search-inp{
+                height: 50px;
+                padding: 0 10px;
+                border: none;
+                width: 224px;
+                font-size: 16px;
+}
+
+/* 设置input获取焦点后的样式 */
+.search-wrapper .search-inp:focus{
+                outline: 1px solid #ff6700;
+}
+
+/* 设置搜索按钮样式 */
+.search-wrapper .search-btn{
+                height: 50px;
+                width: 52px;
+                padding: 0;
+                border: none;
+                background-color: #fff;
+                color: #616161;
+                font-size: 16px;
+                border-left: 1px solid rgb(224, 224, 224);
+}
